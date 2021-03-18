@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+ 
+ <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Security-Policy" 
+      content="default-src *;  
+	           script-src * 'unsafe-inline'; 
+			   style-src * 'unsafe-inline'; 
+			   img-src * data: content:;"
+    > 
+	  
+	<!--meta http-equiv="Content-Security-Policy" content="
+		default-src * gap: ws: https://ssl.gstatic.com;
+		style-src   * 'unsafe-inline' 'self' data: blob:;
+		script-src  * 'unsafe-inline' 'unsafe-eval' data: blob:;
+		img-src     * data: 'unsafe-inline' 'self';"
+	-->
+			   
+	<meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"> 
+	<meta name="color-scheme" content="light dark"> 
+		
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdWgu3MKgdqJyBFqh7bEAOmXpzwWRgVL0"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link  rel="stylesheet"  href="css/index.css" />
+	<script src="cordova.js"> </script>
+	<script src="libreria.js"> </script>
+	<script src="js/index.js"> </script>
+
+ </head>
+ 
+ 
+ <body>
+	<div class="container-fluid" align="center">
+		<div>
+			<h1 id="titolo"> Perizie e rilievi </h1>
+			<h1 id="logout">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+					<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+				</svg>
+			</h1>
+		</div>
+
+		<label align="center">Scatta la/e foto da inviare</label>
+		<br>
+		<button type="button" class="btn btn-dark btn-sm" id="btnScatta">Scatta foto</button>
+		<br><br>
+
+
+		<table class="table table-borderless">
+			<thead>
+				<tr class="text-center" colspen="8" align="center">
+				  <th style="width: 100%;">Nascondi foto</th>
+				</tr>
+			</thead>
+			<tbody id="sezFoto"></tbody>
+		  </table>
+		
+		  <button type="button" class="btn btn-dark btn-sm" id="btnInvia">Invia</button>
+
+	</div>
+			
+ </body>
+</html>

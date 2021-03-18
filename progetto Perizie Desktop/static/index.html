@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+    <title>Perizie e rilievi</title>
+    <meta charset="UTF-8">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdWgu3MKgdqJyBFqh7bEAOmXpzwWRgVL0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />		
+    <script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link  rel="stylesheet" href="index.css" />
+    <script type="text/javascript" src="libreria.js"></script>
+    <script src="index.js"></script>
+</head>
+
+
+
+<!-- ----------------------------  BODY  ----------------------------- -->
+
+<body>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h1> Perizie e rilievi </h1>
+        </div>
+        <div class="col-sm-2" >
+            <h1 id="logout">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                </svg>
+            </h1>
+        </div>
+    </div>
+    
+    <br>
+
+    <div id="header">
+        <button id="btnNewUser" type="button" class="btn btn-secondary">Inserire nuovo utente</button>
+        <button id="btnViewMap" type="button" class="btn btn-secondary">Visualizza mappa</button>
+    </div>
+
+    <br>
+
+    <div>
+        <div class="container-fluid">
+            <div class="row" id="utenti">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-4" id="newUser">
+                    <h3>Inserire i dati del nuovo dipendente</h3>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5" align="left">
+                            <label >Cognome: </label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="textbox" id="cognome"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5" align="left">
+                            <label>Nome: </label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="textbox" id="nome"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5" align="left">
+                            <label>Indirizzo mail: </label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="textbox" id="mail"/>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row" >
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-6" align="left">
+                            <input type="radio" id="ut" name="rdb" value="ut" checked>
+                            <label for="rdb">Utente</label>
+                            <br>
+                            <input type="radio" id="amm" name="rdb" value="amm" >
+                            <label for="rdb">Amministratore</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <button id="btnInserisci" type="button" class="btn btn-secondary">Inserisci</button>
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-12" id="pwd"></div>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4" id="viewAllUsers">
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+
+            <div class="row" id="wrapper">
+                <div class="col-sm-3" align="center">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label >Città: </label>
+                            <input type="textbox" id="citta" value="cuneo"/>
+                            <br><br>
+                            <button id="btnView" type="button" class="btn btn-secondary">Visualizza mappa</button>
+                        </div>
+                    </div><hr>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button id="btnPercorso" type="button" class="btn btn-secondary">Visualizza percorso</button>
+                                </div>
+                            </div><hr><br>
+                            <div class="row">
+                                <div class="col-sm-12"  id="dettagliFoto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8" id="mappafoto"></div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div>
+
+        
+    </div>
+</body>
+
+</html>

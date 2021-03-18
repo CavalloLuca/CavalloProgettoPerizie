@@ -1,0 +1,67 @@
+body{
+	background-color: lightgray;
+}
+
+h1 {
+	text-align: center;
+	font-size: 25pt;
+}
+
+h3{
+	padding: 0px;
+	margin: 0px 0px 20px 0px;
+}
+
+#header {
+	width: 1200px;
+	margin: auto;
+	text-align: center;
+}
+
+#wrapper {
+	width: 100%;
+	margin: 10px auto;
+	overflow: auto;
+}
+
+#wrapper .map {
+	width: 800px;
+	height: 600px;
+	margin: 10px;
+	display: inline-block;
+}
+
+#wrapper .panel {
+	width: 340px;
+	margin: 10px;
+	float: right;
+}
+
+#wrapper .msg {
+	width: 800px;
+	margin: 10px;
+	font-size: 16pt;
+	display: inline-block;
+}
+
+#newUser, #viewAllUsers{
+	background-color: #7CE2F2;
+	padding:20px;
+	text-align: center;
+}
+
+#newUser .row{
+	margin:3px;
+}
+
+#viewAllUsers ul{
+	text-align: left;
+	font-size: 13pt;
+}
+
+#mappafoto{
+	height: 550px;
+}
+#logout svg:hover{
+	cursor:pointer;
+}
